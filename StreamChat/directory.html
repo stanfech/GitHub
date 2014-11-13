@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="fr" ng-app="streamServer">
+	<head>
+		<title>StreamServer</title>
+		<script type="text/javascript" src="js/angular/angular.js"></script>
+		<script type="text/javascript" src="js/angular/angular-route.js"></script>
+		<script type="text/javascript" src="js/peer/peer.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<script lang="text/javascript" src = "js/directory.js"></script>
+	</head>
+	<body>
+		<section ng-controller="directoryController">
+			<article ng-show="users.length">
+			<ul>
+				<li ng-repeat="user in users">
+					<span>{{user.userName}}</span>
+					<button ng-click="banish(user)">Remove</button>
+				</li>
+			</ul>
+			</article>
+		
+		</section>
+	</body>
+</html>

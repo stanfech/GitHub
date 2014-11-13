@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="streamChat">
+	<head>
+		<title>StreamCHAT</title>
+		<script type="text/javascript" src="js/angular/angular.js"></script>
+		<script type="text/javascript" src="js/angular/angular-route.js"></script>
+		<script type="text/javascript" src="js/peer/peer.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<script type="text/javascript" src ="js/main.js"></script>
+		<link rel="stylesheet" href="web/css/style.css">
+
+	</head>
+	<body ng-controller="chatController">
+		<head>
+			<h1>StreamCHAT</h1>
+		</head>
+		<section id="welcome" ng-hide="isConnected">
+		<center>
+			<div class="welcome"><i>{{welcomeMessage}}</i><br><br><br></div>
+			<div>
+				<input autofocus id="userNameInput" ng-enter="connect()" placeholder="Choose a user name" ng-model="userName"/><br><br>
+				<button id="connectButton" ng-click="connect()"><strong>Get started!<strong></button>
+			<div>
+			</center>
+		</section>
+		<section ng-show="isConnected">
+		<article id="addOns">
+			<aside class="addOn" style="margin-top:0px;">
+			<span style="cursor:pointer;" ng-click="showPeerId()">{{peerOrName}}<span>
+			</aside>
+			<aside id="discussion" class="addOn">
+				
+				<div>	
+					<div ng-hide="directoryConnected">Not connected to directory</div>
+					<div ng-show="directoryConnected">Connected to directory</div>					
+					<button ng-show="directoryConnected" class="button" ng-click="directoryConnection()">Let me invisible</button>
+					<button ng-hide="directoryConnected" class="button" ng-click="directoryConnection()">Let me visible</button>
+				</div>
+	
+				<input ng-enter="connectNewPeer()" placeholder="Connect peer id" ng-model="peerToConnect" ngKeyPress="connectNewPeer(event)"/>
+				<button class="button"  ng-click="connectNewPeer()">Connect</button>
+				
+			</aside>
+			<aside id="contact" class="addOn">
+				<div>Contacts</div>
+				<div id="contact-list" ng-show="contacts.length">
+					<div ng-repeat="contact in contacts">
+						<span>
+							<strong>{{contact.userName}}</strong>
+						</span>
+						<button class="button", ng-click="banish(contact)">Remove</button>
+					</div>
+				</div>
+				<div ng-hide="contacts.length">
+			<i>Add contacts from the Users list</i>
+				</div>
+			</aside>
+			<aside id="user" class="addOn">
+				<div id="client-list">
+				Users
+				</div>
+				<div ng-show="users.length">
+					<div ng-repeat="user in users">
+						<span>{{user.userName}}</span>
+						<button class="button", ng-click ="add(user)">Add</button>
+						<button class="button", ng-click ="newDiscussion(user)">New discussion</button>
+					</div>
+				</div>
+				<div ng-hide="users.length"><i>No one else is connected</i></div>
+			</aside>
+			<aside ng-show="0">
+				<div>Historique</div>
+			</aside>
+		</article>
+
+		<article id="chat">	
+			<div>
+			
+			<button class="button1", ng-click="newDiscussion()">New discussion</button>
+			<button class="button1", ng-click="quitDiscussion()" ng-show="contacts.length">Quit the discussion</button>
+			<button class="button1", name="clear" ng-click="clear()">Clear</button>	
+	
+			</div>
+			<div id = "conversation">
+				<div class = "divConv" ng-repeat="message in messages">
+					<div ng-show = "message.sender.length">
+						<strong>{{message.sender}}</strong>
+					</div>
+					<div ng-switch="message.type">
+						<div ng-switch_when="message">
+						{{message.data}}
+						</div>
+						<div class="ownMessage" ng-switch_when="own">
+						{{message.data}}
+						</div>
+						<div ng-switch_when="text">
+							<i>{{message.data}}</i>
+						</div>
+						<div ng-switch_when="photo">
+						<img ng-src="{{message.data}}"></img>
+						</div>
+						<div ng-switch_when="video">
+						<embed ng-src="{{message.data}}"></embed> 
+						</div>
+					</div>
+				
+
+				</div>
+			</div>
+			<div id="send" ng-show="contacts.length">
+				<span id="message">
+					<input placeholder="Send a message" ng-enter="send()" id="textarea" ng-model="message"/>
+					<button class="button", id="sendButton" name ="send" ng-click="send()">Send</button>	
+				</span>
+				<span id="sendPhoto">
+					<label id="inputPhoto" for="photo" >Add photo</label> 
+					<input type="file" multiple accept="image/*" name="photo" id="photo" style="position:absolute; top:-20000px;"/>
+				</span>
+				<span id="sendVideo">
+					<label id="inputVideo" for="video" >Add video</label> 
+					<input type="file" multiple accept="video/*" name="video" id="video" style="position:absolute; top:-20000px;"/>
+				</span>
+				
+			<div>
+		</article>
+		</section>
+
+		<footer><br><br><br>
+@Stanislas Fechner for StreamRoot
+		</footer>
+	</body>
+</html>

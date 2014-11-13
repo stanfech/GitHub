@@ -1,0 +1,181 @@
+*{
+
+}
+
+.welcome{
+	color:white;
+}
+.divConv{
+	margin:2px 0px 2px 0px
+}
+#userName{
+	float:center;
+	width:300px;
+}
+head{
+	font:Helvetica;
+}
+
+footer{
+	font-family:Helvetica,sans-serif;
+}
+
+body{
+	background : black;
+	padding: 5px 5px 5px 5px;
+	}
+
+h1{
+	font-size:2em;
+	font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+	text-align:center;
+	color:white;
+	
+}
+#userNameInput{
+	width:200px;
+	height:30px;
+	border-radius:3px;
+	font-size:1em
+}
+#connectButton{
+	font:Helvetica;
+	font-size:1em;
+	border: 0px solid #666;
+	color:black;
+	width:100px;
+	height:50px;
+	border-radius:3px;
+	text-decoration:none;
+	background: #33AD5C no-repeat scroll 5px center;
+	cursor:pointer;
+	text-align:center;
+	vertical-align:center;
+	padding:4px 5px 4px 5px;
+	margin:10px 10px 10px 10px;
+}
+label{
+	font-family:Helvetica,sans-serif;
+	border: 0px solid #666;
+	color:white;
+	width:50px;
+	border-radius:4px;
+	text-decoration:none;
+	background: black no-repeat scroll 5px center;
+	cursor:pointer;
+	text-align:center;
+	vertical-align:center;
+	padding:4px 5px 4px 5px;
+	margin: 3px 0px 3px 0px;
+	overflow:hidden;
+}
+
+.button1 {
+font-weight:bold;
+  border: 0px solid #666;
+  color:white;
+  border-radius:4px;
+  text-decoration:none;
+  background: #E6762B no-repeat scroll 5px center;
+  cursor:pointer;
+  text-align:center;
+  vertical-align:center;
+  padding:4px 5px 4px 5px;
+  margin: 3px 0px 3px 0px;
+  
+  
+  
+  
+	
+}
+
+.button {
+font-weight:bold;
+  border: 0px solid #666;
+  color:white;
+  border-radius:4px;
+  text-decoration:none;
+  background: black no-repeat scroll 5px center;
+  cursor:pointer;
+  text-align:center;
+  vertical-align:center;
+  padding:4px 5px 4px 5px;
+  margin: 3px 0px 3px 0px;
+	
+}
+  
+  
+#send{
+width:80%;
+	background: #FF5C33;
+}
+
+#discussion{
+	float: center;
+}
+
+#conversation{
+	border-radius:4px;
+	height:400px;
+	width:95%;
+	overflow:auto;
+	background: #E6762B;
+	margin: 10px 10px 10px 0px;
+	padding: 15px 15px 15px 15px;
+}
+
+#send{
+	background:#5C70AA;
+	border-radius:4px;
+	padding: 5px 5px 5px 5px;
+}
+
+
+section
+{
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	height:100%
+}
+
+article
+{
+
+}
+
+.ownMessage{
+	font-style:italic;
+}
+
+
+#addOns{
+	float: left;
+	width: 300px;
+	height:50%;
+	overflow:auto;
+}
+
+#sendButton{
+}
+.addOn{
+	border-radius:4px;
+	background: #5C70AA;
+	padding:5px 5px 5px 5px;
+	margin:10px 10px 10px 10px;
+}
+
+#chat{
+	margin-left: 320px;
+}
+
+
+#contact{
+	
+}
+footer{
+font-size:0.6em;
+	font-family: "Arial Black", Arial, Verdana, sans-serif;
+	text-align:center;
+	vertical-align:bottom;
+	color:white;
+}
